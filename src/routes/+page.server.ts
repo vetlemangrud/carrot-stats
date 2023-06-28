@@ -1,5 +1,5 @@
 import moment from 'moment';
-import prisma from '../lib/prisma';
+import prisma from '../util/prisma';
 
 export async function load() {
 	const lastCarrot = await prisma.carrot.findFirst({ orderBy: { timestamp: 'desc' } });
