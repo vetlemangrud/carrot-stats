@@ -40,7 +40,11 @@
 	"dependencies": {
 		"@auth/core": "^0.8.3",
 		"@auth/sveltekit": "^0.3.3",
+		"@popperjs/core": "^2.11.8",
 		"@prisma/client": "4.16.0",
-		"moment": "^2.29.4"
+		"flowbite": "^1.6.6",
+		"flowbite-svelte": "^0.38.5",
+		"moment": "^2.29.4",
+		"tailwind-merge": "^1.13.2"
 	}
 }

@@ -2,4 +2,4 @@
 	export let data;
 </script>
 
-<h1 class="grid place-items-center h-screen">Vetle ate a carrot {data.timeDiff}</h1>
+<h1 class="grid place-items-center">Vetle ate a carrot {data.timeDiff}</h1>
