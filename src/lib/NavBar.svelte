@@ -18,9 +18,11 @@
 	<NavBrand>🥕 Carrot Stats</NavBrand>
 	<div class="flex md:order-2">
 		{#if $page.data.session}
-			{#if $page.data.session.user?.image}
-				<Avatar id="user-drop" src={$page.data.session.user.image} class="cursor-pointer" />
-			{/if}
+			<Avatar
+				id="user-drop"
+				src={$page.data.session.user?.image ?? undefined}
+				class="cursor-pointer"
+			/>
 			<Dropdown triggeredBy="#user-drop">
 				<DropdownHeader>
 					<span class="block text-sm"> {$page.data.session.user?.name ?? 'User'} </span>
@@ -29,11 +31,12 @@
 				<DropdownItem>Settings</DropdownItem>
 				<DropdownItem>Earnings</DropdownItem>
 				<DropdownDivider />
-				<DropdownItem>Sign out</DropdownItem>
+				<DropdownItem on:click={() => signOut()} class="button">Sign out</DropdownItem>
 			</Dropdown>
-			<button on:click={() => signOut()} class="button">Sign out</button>
 		{:else}
-			<Button on:click={() => signIn('github')} size="sm">Sign in</Button>
+			<Button on:click={() => signIn(import.meta.env.DEV ? 'credentials' : 'github')} size="sm"
+				>Sign in</Button
+			>
 		{/if}
 		<NavHamburger on:click={toggle} />
 	</div>
