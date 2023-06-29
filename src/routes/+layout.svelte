@@ -8,5 +8,5 @@
 <div class="h-screen flex flex-col justify-between">
 	<NavBar />
 	<slot />
-	<footer class="h-10 text-center text-slate-600">Made by Vetle</footer>
+	<footer>{' '}</footer>
 </div>
