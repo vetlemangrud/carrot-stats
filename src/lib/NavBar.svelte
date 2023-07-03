@@ -15,7 +15,7 @@
 </script>
 
 <Navbar let:hidden let:toggle>
-	<NavBrand>🥕 Carrot Stats</NavBrand>
+	<NavBrand href="/">🥕 Carrot Stats</NavBrand>
 	<div class="flex md:order-2">
 		{#if $page.data.session}
 			<Avatar
@@ -27,9 +27,7 @@
 				<DropdownHeader>
 					<span class="block text-sm"> {$page.data.session.user?.name ?? 'User'} </span>
 				</DropdownHeader>
-				<DropdownItem>Dashboard</DropdownItem>
-				<DropdownItem>Settings</DropdownItem>
-				<DropdownItem>Earnings</DropdownItem>
+				<DropdownItem href="/devour">Devour Carrot</DropdownItem>
 				<DropdownDivider />
 				<DropdownItem on:click={() => signOut()} class="button">Sign out</DropdownItem>
 			</Dropdown>
@@ -38,6 +36,5 @@
 				>Sign in</Button
 			>
 		{/if}
-		<NavHamburger on:click={toggle} />
 	</div>
 </Navbar>

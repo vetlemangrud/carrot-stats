@@ -8,6 +8,9 @@ dependencies:
   '@auth/core':
     specifier: ^0.8.3
     version: 0.8.3
+  '@auth/prisma-adapter':
+    specifier: ^1.0.0
+    version: 1.0.0(@prisma/client@4.16.0)
   '@auth/sveltekit':
     specifier: ^0.3.3
     version: 0.3.3(@sveltejs/kit@1.20.4)(svelte@3.59.2)
@@ -102,6 +105,22 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /@auth/core@0.8.1:
+    resolution: {integrity: sha512-WudBmZudZ/cvykxHV5hIwrYsd7AlETQ535O7w3sSiiumT28+U9GvBb8oSRtfzxpW9rym3lAdfeTJqGA8U4FecQ==}
+    peerDependencies:
+      nodemailer: ^6.8.0
+    peerDependenciesMeta:
+      nodemailer:
+        optional: true
+    dependencies:
+      '@panva/hkdf': 1.1.1
+      cookie: 0.5.0
+      jose: 4.14.4
+      oauth4webapi: 2.3.0
+      preact: 10.11.3
+      preact-render-to-string: 5.2.3(preact@10.11.3)
+    dev: false
+
   /@auth/core@0.8.2:
     resolution: {integrity: sha512-swqJ7tKFlqiYIl1znFGrrawUv1F6rwL+/f3DoeWDaZLnr2phiHFaZsvNvLK7WBJhnJbel78Vd3GznuR31AnFUw==}
     peerDependencies:
@@ -132,6 +151,17 @@ packages:
       oauth4webapi: 2.3.0
       preact: 10.11.3
       preact-render-to-string: 5.2.3(preact@10.11.3)
+    dev: false
+
+  /@auth/prisma-adapter@1.0.0(@prisma/client@4.16.0):
+    resolution: {integrity: sha512-+x+s5dgpNmqrcQC2ZRAXZIM6yhkWP/EXjIUgqUyMepLiX1OHi2AXIUAAbXsW4oG9OpYr/rvPIzPBpuGt6sPFwQ==}
+    peerDependencies:
+      '@prisma/client': '>=2.26.0 || >=3 || >=4'
+    dependencies:
+      '@auth/core': 0.8.1
+      '@prisma/client': 4.16.0(prisma@4.16.0)
+    transitivePeerDependencies:
+      - nodemailer
     dev: false
 
   /@auth/sveltekit@0.3.3(@sveltejs/kit@1.20.4)(svelte@3.59.2):
