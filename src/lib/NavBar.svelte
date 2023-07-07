@@ -1,4 +1,5 @@
 <script>
+	import { enhance } from '$app/forms';
 	import { page } from '$app/stores';
 	import { signIn, signOut } from '@auth/sveltekit/client';
 	import {
@@ -27,14 +28,14 @@
 				<DropdownHeader>
 					<span class="block text-sm"> {$page.data.session.user?.name ?? 'User'} </span>
 				</DropdownHeader>
-				<DropdownItem href="/devour">Devour Carrot</DropdownItem>
+				<form method="POST">
+					<DropdownItem class="button" type="submit">Devour Carrot</DropdownItem>
+				</form>
 				<DropdownDivider />
 				<DropdownItem on:click={() => signOut()} class="button">Sign out</DropdownItem>
 			</Dropdown>
 		{:else}
-			<Button on:click={() => signIn(import.meta.env.DEV ? 'credentials' : 'github')} size="sm"
-				>Sign in</Button
-			>
+			<Button on:click={() => signIn('github')} size="sm">Sign in</Button>
 		{/if}
 	</div>
 </Navbar>
