@@ -1,0 +1,5 @@
+GET https://phg26lpw55.execute-api.eu-north-1.amazonaws.com/dev/carrots
+
+###
+
+POST https://phg26lpw55.execute-api.eu-north-1.amazonaws.com/dev/carrots

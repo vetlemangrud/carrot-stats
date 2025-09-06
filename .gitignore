@@ -1,0 +1,24 @@
+.env
+# Terraform generated files and directories
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraformrc
+terraform.rc
+
+# Crash logs and debug information
+crash.log
+debug.log
+
+# Terraform sensitive variable definitions
+*.tfvars
+*.tfvars.json
+
+# Local override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Lambda code
+*.zip
